@@ -1,0 +1,42 @@
+server:
+   port: 9090
+
+jasypt:
+   encryptor:
+      password: RoNGlA
+      algorithm: PBEWithMD5AndDES
+      iv-generator-classname: org.jasypt.iv.NoIvGenerator
+
+spring:
+   application:
+      name: cosmos-backend
+   cloud:
+      config:
+         enabled: false
+   security:
+      oauth2:
+         resourceserver:
+            jwt:
+               issuer-uri: https://keycloak-des.sistemafiergs.com.br/auth/realms/FIERGS
+   datasource:
+      url: jdbc:mysql://localhost:3306/cosmos_db?useSSL=false&serverTimezone=UTC
+      username: cosmos_user
+      password: cosmos123
+      driver-class-name: com.mysql.cj.jdbc.Driver
+   jpa:
+      hibernate:
+         ddl-auto: none
+      show-sql: false
+      properties:
+         hibernate:
+            format_sql: true
+            dialect: org.hibernate.dialect.MySQL8Dialect
+      open-in-view: false
+   liquibase:
+      change-log: liquibase/changelog.sql
+
+springdoc:
+   packagesToScan: br.org.fiergs.cosmos.api
+   writer-with-order-by-keys: true
+   swagger-ui:
+      path: /docs/swagger-ui.html
