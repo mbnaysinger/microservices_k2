@@ -2,7 +2,7 @@
 
 -- changeset initial:1
 -- tag versao_1.0
-CREATE TABLE authors (
+CREATE TABLE products (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -25,11 +25,11 @@ CREATE TABLE books (
     updated_by VARCHAR(255),
     version BIGINT DEFAULT 0,
     deleted BOOLEAN DEFAULT FALSE,
-    CONSTRAINT fk_books_authors FOREIGN KEY (author_id) REFERENCES authors(id)
+    CONSTRAINT fk_books_authors FOREIGN KEY (author_id) REFERENCES products(id)
 );
 
 -- changeset test:1 context:local
-INSERT INTO authors (name, created_by, updated_by, version, deleted) VALUES 
+INSERT INTO products (name, created_by, updated_by, version, deleted) VALUES
 ('Author One', 'system', 'system', 0, FALSE),
 ('Author Two', 'system', 'system', 0, FALSE),
 ('Author Three', 'system', 'system', 0, FALSE),

@@ -11,7 +11,7 @@ jasypt:
 
 spring:
    application:
-      name: cosmos-backend
+      name: product
    cloud:
       config:
          enabled: false
