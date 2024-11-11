@@ -1,10 +1,10 @@
 server:
-   port: 8090
+   port: 8091
 spring:
    application:
-      name: product
+      name: order
    datasource:
-      url: jdbc:mysql://localhost:3306/product_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      url: jdbc:mysql://localhost:3306/order_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       username: root
       password: root
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -18,20 +18,13 @@ spring:
             jdbc:
                time_zone: UTC-3
             show-sql: true
-   security:
-      user:
-         name: admin
-         password: 123
    liquibase:
       change-log: liquibase/changelog.sql
-app:
-   filters:
-      apikey:
-         pathPrefix: /api
+
 springdoc:
-   api-docs:
-      path: /v3/api-docs
+   packagesToScan: com.naysinger.order.api
+   writer-with-order-by-keys: true
    swagger-ui:
-      path: /swagger-ui.html
-VALID_API_KEY: T35T3AP16R0DUC1
-API_KEY_HEADER: PRODUCT-KEY
+      path: /docs/swagger-ui.html
+VALID_API_KEY: T35T3AP106D34
+API_KEY_HEADER: ORDER-KEY

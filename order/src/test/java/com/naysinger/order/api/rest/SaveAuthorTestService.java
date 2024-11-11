@@ -1,6 +1,6 @@
-package com.naysinger.product.api.rest;
+package com.naysinger.order.api.rest;
 
-import com.naysinger.product.entity.Product;
+import com.naysinger.order.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-package com.naysinger.product.api.rest;
+package com.naysinger.order.api.rest;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -26,8 +26,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.naysinger.product.entity.Product;
-import com.naysinger.product.repository.ProductRepository;
+import com.naysinger.order.entity.Product;
+import com.naysinger.order.repository.ProductRepository;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
